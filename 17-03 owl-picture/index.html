@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        /* 主体样式 */
+        .wrapper{
+            width: 900px;
+            height: 900px;  
+            margin: -100px auto;
+            position: relative; 
+            -webkit-transform: scale(0.7);
+            -moz-transform: scale(0.7);
+            transform: scale(0.7);
+        }
+
+        .main-bg{
+            width: 900px;
+            height: 900px; 
+            overflow: hidden;
+            background-color: #f67280;
+            position: relative;
+        }
+
+
+        /* 月亮背景 */
+        .moon-main{
+            width: 780px;
+            height: 780px;
+            background-color: #fbe3d7;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -390px;
+        }
+
+        .moon-hide{
+            width: 690px;
+            height: 690px;
+            background-color: #f67280;
+            border-radius: 50%;
+            position: absolute;
+            right: 0px;
+        }
+
+        /* 星星 */
+
+        .starry-box{
+            width: 900px;
+            height: 900px;
+            position: relative;
+        }
+
+        .starry{
+            width: 50px;
+            height: 70px;
+            background-color: #fbe3d7;
+            position: absolute;
+        }
+
+        .starry .hide-1,
+        .starry .hide-2,
+        .starry .hide-3,
+        .starry .hide-4{
+            background-color: #f67280;
+        }
+
+        .starry .hide-1,
+        .starry .hide-2{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            top: -25px;
+        }
+
+        .starry .hide-3,
+        .starry .hide-4{
+            width: 50px;
+            height: 80px;
+            border-radius: 50%;
+            position: absolute;
+            top: 25px;
+        }
+
+        .starry .hide-3,
+        .starry .hide-1{
+            left: -25px;
+        }
+        .starry .hide-4,
+        .starry .hide-2{
+            right: -25px;
+        }
+
+        .starry.min{
+            transform: scale(0.5);
+        }
+
+        .starry.s1{
+            top: 70px;
+            left: 150px;
+        }
+
+        .starry.s2{
+            top: 220px;
+            left: 20px;
+        }
+
+        .starry.s3{
+            top: 100px;
+            left: 550px;
+        }
+
+        .starry.s4{
+            top: 90px;
+            left: 710px;
+        }
+
+        .starry.s5{
+            top: 800px;
+            left: 110px;
+        }
+
+        .starry.s6{
+            top: 750px;
+            left: 730px;
+        }
+
+        .starry.s7{
+            top: 540px;
+            left: 730px;
+        }
+
+        .starry.s8{
+            top: 150px;
+            left: 50px;
+        }
+
+        .starry.s9{
+            top: 150px;
+            left: 660px;
+        }
+
+        .starry.s10{
+            top: 730px;
+            left: 60px;
+        }
+
+
+        /* 蓝色星球 */
+
+        .blue-starry-box{
+            top: 0px;
+            left: 0px;
+            width: 900px;
+            height: 900px;
+            position: absolute;
+        }
+
+
+        .blue-starry{
+            width: 80px;
+            height: 80px;
+            background-color: #214170;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .blue-starry .ring{
+            position: absolute;
+            width: 160px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid #214170;
+            top: 15px;
+            left: -42px;
+        }
+
+        .blue-starry .ring:before,
+        .blue-starry .ring:after{
+            content: "";
+            position: absolute;
+            height: 10px;
+            width: 10px;
+            background-color: #f67280;
+        }
+
+        .blue-starry .ring:before{
+            top: 35px;
+            left: 25px;
+        }
+
+        .blue-starry .ring:after{
+            top: 23px;
+            right: -2px;
+        }
+
+        .blue-starry.s1{
+            left: 310px;
+            top: 130px;
+            transform: scale(1);
+        }
+
+        .blue-starry.s1 .ring{
+            transform: rotate(15deg);
+        }
+
+        .blue-starry.s2{
+            left: 70px;
+            top: 70px;
+            transform: scale(0.5);
+        }
+
+        .blue-starry.s2 .ring{
+            transform: rotate(-35deg);
+        }
+
+        .blue-starry.s3{
+            left: 750px;
+            top: 330px;
+            transform: scale(0.7);
+        }
+
+        .blue-starry.s3 .ring{
+            transform: rotate(35deg);
+        }
+
+        .blue-starry.s4{
+            left: 460px;
+            top: 90px;
+            transform: scale(0.4);
+        }
+
+        .blue-starry.s5{
+            left: 770px;
+            top: 190px;
+            transform: scale(0.2);
+        }
+
+        .blue-starry.s6{
+            left: 15px;
+            top: 630px;
+            transform: scale(0.3);
+        }
+
+        .blue-starry.s7{
+            left: 185px;
+            top: 785px;
+            transform: scale(0.6);
+        }
+
+        .blue-starry.s8{
+            left: 690px;
+            top: 560px;
+            transform: scale(0.5);
+        }
+
+
+        /* 猫头鹰 */
+        .owl-wrap{
+            width: 400px;
+            height: 550px;
+            position: absolute;
+            bottom: 180px;
+            left: 230px;
+        }
+
+        .owl-foot{
+            width: 100%;
+            height: 95px;
+            position: absolute;
+            bottom: 0px;
+        }
+
+        .owl-foot .leg,
+        .owl-foot .foot{
+            background-color: #3162a7;
+            position: absolute;
+        }
+
+        .owl-foot .leg{
+            position: absolute;
+            width: 35px;
+            height: 50px; 
+            bottom: 0px;
+        }
+
+        .owl-foot .foot{
+            width: 80px;
+            height: 50px;
+        }
+
+        .owl-foot .foot .side{
+            width: 40px;
+            height: 13px;
+            background-color: #80a8db;
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+        }
+
+        .owl-foot .foot:after,
+        .owl-foot .foot:before,
+        .owl-foot .foot .side:after,
+        .owl-foot .foot .side:before{
+            width: 0;
+            height: 0;
+            content: "";
+            position: absolute;
+            top: 0px;
+        }
+
+        .owl-foot .foot:after{
+            border-bottom: 50px solid #3162a7;
+            border-left: 10px solid transparent;
+            right: 100%;
+        }
+
+        .owl-foot .foot:before{
+            border-bottom: 50px solid #3162a7;
+            border-right: 10px solid transparent;
+            left: 100%;
+        }
+
+        .owl-foot .foot .side:after{
+            border-bottom: 13px solid #80a8db;
+            border-left: 5px solid transparent;
+            right: 100%;
+        }
+
+        .owl-foot .foot .side:before{
+            border-bottom: 13px solid #80a8db;
+            border-right: 5px solid transparent;
+            left: 100%;
+        }
+
+        .owl-foot .left .foot .side{
+            margin-left: -23px; 
+        }
+
+        .owl-foot .right .foot .side{
+            margin-left: -17px; 
+        }
+
+        .owl-foot .left .leg{
+            left: 30px;
+        }
+
+        .owl-foot .right .leg{
+            left: 15px;
+        }
+
+        .owl-foot .left{
+            position: absolute;
+            left: 120px;
+            bottom: 0px;
+        }
+
+        .owl-foot .right{
+            position: absolute;
+            right: 120px;
+            bottom: 0px;
+        }
+
+        .owl-body{
+            width: 100%;
+            height: 140px;
+        }
+
+        .owl-body .body{
+            width: 280px;
+            height: 140px;
+            background-color: #3162a7;
+            border-radius: 0px 0px 30px 30px;
+            position: absolute;
+            bottom: 50px;
+            left: 100px;
+        }
+
+        .owl-body .body .belly{
+            width: 210px;
+            height: 100px;
+            background-color: #fff;
+            border-radius: 280px 280px 0px 0px;
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            margin-left: -105px;
+        }
+
+        .owl-body .body .arm{
+            position: absolute;
+            top: 5px;
+        }
+
+        .owl-body .body .arm-1{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #3162a7;
+        }
+
+        .owl-body .body .arm-2{
+            width: 55px;
+            height: 55px;
+            position: absolute;
+            background-color: #3162a7;
+            transform: rotate(-35deg);
+            left: 15px;
+            top: 50px;
+        }
+
+        .owl-body .body .left{
+            left: -50px;
+        }
+
+        .owl-body .body .right{
+            right: -50px;
+            transform: scale(-1,1);
+        }
+
+        .owl-body .belly .plume{
+            width: 40px;
+            height: 20px;
+            background-color: #3162a7;
+            border-radius: 0 0 40px 40px;  
+            position: absolute;
+            top: 3px;
+            left: 50%;
+            margin-left: -20px; 
+            box-shadow: 0 0 0 0 #FFFFFF inset;
+        }
+
+        .owl-body .belly .plume span{
+            position: absolute;
+            left: 5px;
+            top: 0px;
+            width: 30px;
+            height: 15px;
+            border-radius: 0 0 30px 30px;
+            background-color: #fff;
+        }
+
+        .owl-body .belly .plume::before,
+        .owl-body .belly .plume::after{
+            content: "";
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            border-top: 15px solid #fff;
+            bottom: 5px;
+        }
+
+        .owl-body .belly .plume::before{
+            border-right: 15px solid transparent;
+            left: 0px;
+            
+        }
+
+        .owl-body .belly .plume::after{
+            border-left: 15px solid transparent;
+            right: 0px;
+            
+        }
+
+        .owl-body .belly .plume.s2,
+        .owl-body .belly .plume.s3{
+            top: 23px;
+        }
+
+        .owl-body .belly .plume.s4,
+        .owl-body .belly .plume.s5,
+        .owl-body .belly .plume.s6{
+            top: 48px;
+        }
+
+        .owl-body .belly .plume.s7,
+        .owl-body .belly .plume.s8{
+            top: 73px;
+        }
+
+
+        .owl-body .belly .plume.s2,
+        .owl-body .belly .plume.s7{
+            margin-left: -60px;
+        }
+
+        .owl-body .belly .plume.s3,
+        .owl-body .belly .plume.s8{
+            margin-left: 20px;
+        }
+
+        .owl-body .belly .plume.s4{
+            margin-left: -85px;
+        }
+
+        .owl-body .belly .plume.s6{
+            margin-left: 40px;
+        }
+
+
+
+        .owl-face{
+            width: 390px;
+            height: 280px;
+            background-color: #3162a7;
+            position: absolute;
+            top: 80px;
+            left: 45px;
+        }
+
+        .owl-face .owl-ear{
+            width: 100%;
+            position: absolute;
+            top: -30px;
+        }
+
+        .owl-face .owl-ear:after,
+        .owl-face .owl-ear:before{
+            width: 0;
+            height: 0;
+            content: "";
+            position: absolute;
+            border-bottom: 30px solid #3162a7;
+        }
+
+        .owl-face .owl-ear:before{
+            border-right: 50px solid transparent;
+        }
+
+        .owl-face .owl-ear:after{
+            border-left: 50px solid transparent;
+            right: 0px;
+        }
+
+        .owl-face::after,
+        .owl-face::before{
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: #e18f79; 
+        margin: 5px;
+        top: 205px;
+        }
+
+        .owl-face::after{
+            right: 0px;
+        }
+
+        .owl-face .owl-eyes .eye{
+            height: 105px;
+            width: 105px;
+            border: 30px solid #fff;
+            background-color: #214170;
+            border-radius: 50%;
+            position: absolute;
+            top: 35px;
+            margin: 5px;
+        }
+
+        .owl-face .owl-eyes .eye:before{
+            content: "";
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: #fff;
+        }
+
+        .owl-face .owl-eyes .eye:after{
+            content: "";
+            width: 25px;
+            height:25px;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background-color: #b9ceeb;
+        }
+
+        .owl-face .owl-eyes .right{
+            right: 0px;
+        }
+
+        .owl-face .owl-nose{
+            width: 0px;
+            height: 0px;
+            border-top: 60px solid #f2d4b0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            position: absolute;
+            top: 160px;
+            left: 50%;
+            margin-left: -25px;
+        }
+
+        .owl-face .pattern li:after,
+        .owl-face .pattern li:before{
+            content: "";
+            position: absolute;
+            background-color: #5280bc;
+        }
+
+        .owl-face .pattern li:after{
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+        }
+
+        .owl-face .pattern li:before{
+            width: 15px;
+            height: 15px;
+        }
+
+        .owl-face .pattern li{
+            position: absolute;
+            transform: rotate(45deg);
+            left: 50%;
+            top: 15px;
+            
+        }
+
+        .owl-face .pattern li.s2{
+            margin-left: -25px;
+            top: 30px;
+        }
+
+        .owl-face .pattern li.s3{
+            margin-left: 25px;
+            top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main-bg">
+            <div class="moon-box">
+                <div class="moon-main">
+                    <div class="moon-hide">
+                        
+                    </div>
+                </div>
+            </div>
+            <ul class="starry-box">
+                <li class="starry max s8">
+                    <span class="hide-1"></span>
+                    <span class="hide-2"></span>
+                    <span class="hide-3"></span>
+                    <span class="hide-4"></span>
+                </li>
+                <li class="starry max s9">
+                    <span class="hide-1"></span>
+                    <span class="hide-2"></span>
+                    <span class="hide-3"></span>
+                    <span class="hide-4"></span>
+                </li>
+                <li class="starry max s10">
+                    <span class="hide-1"></span>
+                    <span class="hide-2"></span>
+                    <span class="hide-3"></span>
+                    <span class="hide-4"></span>
+                </li>
+                <li class="starry min s1">
+                    <span class="hide-1"></span>
+                    <span class="hide-2"></span>
+                    <span class="hide-3"></span>
+                    <span class="hide-4"></span>
+                </li>
+                <li class="starry min s2">
+                    <span class="hide-1"></span>
+                    <span class="hide-2"></span>
+                    <span class="hide-3"></span>
+                    <span class="hide-4"></span>
+                </li>
+                <li class="starry min s3">
+                    <span class="hide-1"></span>
+                    <span class="hide-2"></span>
+                    <span class="hide-3"></span>
+                    <span class="hide-4"></span>
+                </li>
+                <li class="starry min s4">
+                    <span class="hide-1"></span>
+                    <span class="hide-2"></span>
+                    <span class="hide-3"></span>
+                    <span class="hide-4"></span>
+                </li>
+                <li class="starry min s5">
+                    <span class="hide-1"></span>
+                    <span class="hide-2"></span>
+                    <span class="hide-3"></span>
+                    <span class="hide-4"></span>
+                </li>
+                <li class="starry min s6">
+                    <span class="hide-1"></span>
+                    <span class="hide-2"></span>
+                    <span class="hide-3"></span>
+                    <span class="hide-4"></span>
+                </li>
+                <li class="starry min s7">
+                    <span class="hide-1"></span>
+                    <span class="hide-2"></span>
+                    <span class="hide-3"></span>
+                    <span class="hide-4"></span>
+                </li>
+            </ul>
+            <ul class="blue-starry-box">
+                <li class="blue-starry s1">
+                    <span class="ring"></span>
+                </li>
+                <li class="blue-starry s2">
+                    <span class="ring"></span>
+                </li>
+                <li class="blue-starry s3">
+                    <span class="ring"></span>
+                </li>
+                <li class="blue-starry s4"></li>
+                <li class="blue-starry s5"></li>
+                <li class="blue-starry s6"></li>
+                <li class="blue-starry s7"></li>
+                <li class="blue-starry s8"></li>
+            </ul>
+        </div>
+        <div class="owl-wrap">
+            <div class="owl-foot">
+                <div class="right">
+                    <div class="leg">
+                        
+                    </div>
+                    <div class="foot">
+                        <div class="side">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="left">
+                    <div class="leg">
+                        
+                    </div>
+                    <div class="foot">
+                        <div class="side">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-body">
+                <div class="body">
+                    <div class="arm right">
+                        <div class="arm-1">
+                            
+                        </div>
+                        <div class="arm-2">
+                            
+                        </div>
+                    </div>
+                    <div class="arm left">
+                        <div class="arm-1">
+                            
+                        </div>
+                        <div class="arm-2">
+                            
+                        </div>
+                    </div>
+                    <ul class="belly">
+                         <li class="plume s1">
+                            <span></span>
+                         </li>
+                         <li class="plume s2">
+                            <span></span>
+                         </li>
+                         <li class="plume s3">
+                            <span></span>
+                         </li>
+                         <li class="plume s4">
+                            <span></span>
+                         </li>
+                         <li class="plume s5">
+                            <span></span>
+                         </li>
+                         <li class="plume s6">
+                            <span></span>
+                         </li>
+                         <li class="plume s7">
+                            <span></span>
+                         </li>
+                         <li class="plume s8">
+                            <span></span>
+                         </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="owl-head">
+                <div class="owl-face">
+                    <div class="owl-ear">
+                    </div>
+                    <div class="owl-eyes">
+                        <div class="left eye">
+                        </div>
+                        <div class="right eye">
+                        </div>
+                    </div>
+                    <div class="owl-nose">
+                    </div>
+                    <ul class="pattern">
+                        <li class="s1"></li>
+                        <li class="s2"></li>
+                        <li class="s3"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
