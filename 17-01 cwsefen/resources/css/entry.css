@@ -1,0 +1,94 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+}
+
+body {
+    color: #b9c4cc;
+    border: 2px solid #8b939e;
+}
+
+
+.left-nav {
+    float: left;
+    width: 200px;
+    height: 100%;
+    overflow: hidden;
+    background-color: #343f50;
+}
+
+.left-nav .nav-head {
+    width: 100%;
+    height: 120px;
+    padding: 20px;
+}
+
+.left-nav .nav-head .logo {
+    width: 100%;
+}
+
+.left-nav .nav-list {
+    margin-top: 20px;
+    width: 220px;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.left-nav .nav-list::-webkit-scrollbar {
+    width: 0px; 
+}
+
+.left-nav .list-team {
+    border-top: 1px solid #283240;
+}
+
+.left-nav .list-team li {
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    border-bottom: 1px solid #283240;
+}
+
+.left-nav .list-team li a {
+    float: left;
+    width: 100%;
+    height: 33px;
+    line-height: 34px;
+    padding-left: 40px;
+    border-left: 5px solid transparent;
+}
+
+.left-nav .list-team li.active a,
+.left-nav .list-team li a:hover {
+    border-left: 5px solid #3fb29d;
+    background-color: #424e62;
+    
+}
+
+.left-nav .nav-foot {
+    position: absolute;
+    bottom: 0px;
+    font-size: 10px;
+    padding: 10px 10px;
+    color: #8b939e;
+}
+
+.left-nav .nav-foot p {
+    line-height: 20px;
+}
+
+
+.mian-iframe {
+    float: left;
+    height: 100%;
+    width: calc(100% - 200px);
+    overflow: hidden;
+}
+
+.mian-iframe iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}

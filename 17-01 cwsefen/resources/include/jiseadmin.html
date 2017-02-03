@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>色粉管理 - Combine Will</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/print.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/websqldb.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body pageid="jiseadmin">
+    <!-- 主面板 START -->
+    <div id="wrapper">
+
+        <!-- 面板切换 START -->
+        <div class="wrap-header">
+            <div class="entry-changing">
+                <a href="javascript:;" class="active">信息</a>
+                <a href="javascript:;">管理</a>
+                <a href="javascript:;">新增</a>
+            </div>
+        </div>
+        <!-- 面板切换 END -->
+
+        <!-- 输入区 START -->
+        <div class="container" id="jiseadmin">
+            
+            <!-- 查询面板 （1） START -->
+            <div class="panel-container show">
+                <div id="jiseadmin-1" class="">
+                    <div class="panel-wrap">
+                        <div class="wrap">
+                            <div class="info-list">
+                                <div class="info-team">
+                                    <h2 class="title">基色供应商：</h2>
+                                    <div class="content jise-vender-entry">   
+                                        <div class="info-from">
+                                            <label>供应商：</label>
+                                            <input type="text">
+                                            <label>缩写：</label>
+                                            <input type="text">
+                                            <button class="submit">添加</button>
+                                        </div>
+                                        <div class="info-text">
+                                            请添加基色供应商！
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="reset-button" tabIndex="-1">重置面板</button>
+                        <!--<button class="preview-button green right" tabIndex="-1">生成预览</button>-->
+                    </div>
+                </div>
+            </div>
+            <!-- 查询面板 （1） END -->
+            
+            <!-- 管理面板 （2） START -->
+            <div class="panel-container">
+                <div id="jiseadmin-2" class="supervise-jise">
+                    <div class="panel-wrap">
+                        <div class="wrap search-jise">
+                            <span>
+                                <select class="search-item">
+                                    <option value="">全部</option>
+                                    <option value="name">编号</option>
+                                    <option value="color">颜色</option>
+                                    <option value="vender">厂商</option>
+                                </select>
+                            </span>
+                            <span class="input"><input class="search-text" type="text" name="price" value=""></span>
+                            <span><input class="search-button" type="button" name="" value="搜索"></span>
+                        </div>
+                    </div>
+                    <div class="panel-wrap">
+                        <div class="table-wrap">
+                            <div class="scroll-wrap">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>编号</th>
+                                            <th>颜色</th>
+                                            <th>厂商</th>
+                                            <th>单价</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="data-list">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="reset-button" tabIndex="-1">重置面板</button>
+                        <!--<button class="enter-button green right" tabIndex="-1">保存添加</button>-->
+                    </div>
+                </div>
+            </div>
+            <!-- 管理面板 （2） END -->
+            
+            <!-- 新增面板 （3） START -->
+            <div class="panel-container">
+                <div id="jiseadmin-3" class="new-jise">
+                    <div class="panel-wrap">
+                        <div class="wrap entry-jise">
+                            <span class="input"><label>编号：</label><input class="data-text" type="text" name="name" value=""></span>
+                            <span class="input"><label>颜色：</label><input class="data-text" type="text" name="color" value=""></span>
+                            <span class="input"><label>厂商：</label><input class="data-text" type="text" name="vender" value=""></span>
+                            <span class="input"><label>单价：</label><input class="data-text" type="text" name="price" value=""></span>
+                            <span><input class="submit" type="submit" name="" value="添加"></span>
+                        </div>
+                    </div>
+                    <div class="panel-wrap">
+                        <div class="table-wrap">
+                            <div class="scroll-wrap">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>UID</th>
+                                            <th>编号</th>
+                                            <th>颜色</th>
+                                            <th>厂商</th>
+                                            <th>单价</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="data-list">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="reset-button" tabIndex="-1">重置面板</button>
+                        <button class="enter-button green right" tabIndex="-1">保存添加</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 新增面板 （3） END -->
+            
+        </div>
+        <!-- 输入区 END -->
+
+    </div>
+    <!-- 主面板 END -->
+
+
+    <!-- 打印详情 START -->
+    <div id="print-control" class="print-control hide">
+        <!-- 预览 START -->
+        <div id="print-view" class="print-wrap min-tags row-4">
+        </div>
+        <!-- 预览 END -->
+
+        <!-- 信息面板 START -->
+        <div class="print-panel">
+            <div class="panel-box row">
+                <h2 class="info-title">打印信息</h2>
+                <div class="info-panel">
+                    <p><b>打印页数：</b><span>5 页</span></p>
+                    <p><b>纸张大小：</b><span>A4</span></p>
+                </div>
+            </div>
+            <div class="button-wrap">
+                <button id="enter-print" class="print-button green" tabIndex="-1">打印</button>
+                <button id="close-print" class="print-button"  tabIndex="-1">取消</button>
+            </div>
+        </div>
+        <!-- 信息面板 END -->
+    </div>
+    <!-- 打印详情 END -->
+
+    <!-- 打印区域 START -->
+    <div id="print-wrap" class="print-wrap min-tags row-4">
+    </div>
+    <!-- 打印区域 END -->
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>色粉管理 - Combine Will</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/entry.css">
+    <script type="text/javascript">
+        window.addEventListener('load', function () {
+            var navList = document.querySelectorAll('.left-nav .nav-list li');
+            var index = 0;
+            for(var i=0, len=navList.length; i<len; i++) {
+                navList[i].index = i;
+                navList[i].onclick = function(){
+                    navList[index].className = '';
+                    this.className = 'active';
+                    index = this.index;
+                }
+            }
+        });
+
+        function setIframe(src) {
+            document.getElementById('main-iframe').setAttribute('src', src);
+        }
+    </script>
+</head>
+<body>
+    <div class="left-nav">
+        <div class="nav-head">
+            <img class="logo" src="images/maxlogo.png" alt="LOGO">
+        </div>
+        <div class="nav-list">
+            <ul class="list-team">
+                <!--<li class="active"><a onclick="setIframe('include/home.html')">首页预览</a></li>-->
+                <li class="active"><a onclick="setIframe('include/biaoqian.html')">标签打印</a></li>
+                <li><a onclick="setIframe('include/peifan.html')">配方打印</a></li>
+                <li><a onclick="setIframe('include/peifanadmin.html')">配方管理</a></li>
+                <li><a onclick="setIframe('include/jiseadmin.html')">基色管理</a></li>
+            </ul>
+        </div>
+        <div class="nav-foot">
+            <p><a href="mailto:oyhemail@163.com">@浩子丶Howes</a></p>
+            <p>版本：<span>v1.0.0.0</span><span> HEX-v1.1.10</span></p>
+        </div>
+    </div>
+    <div class="mian-iframe">
+        <iframe id="main-iframe" src="include/biaoqian.html"></iframe>
+    </div>
+</body>
+</html>

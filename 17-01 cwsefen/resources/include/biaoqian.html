@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>色粉管理 - Combine Will</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/print.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/websqldb.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+    <!-- 主面板 START -->
+    <div id="wrapper">
+
+        <!-- 面板切换 START -->
+        <div class="wrap-header">
+            <div class="entry-changing">
+                <a href="javascript:;" class="active">包装</a>
+                <a href="javascript:;">追踪</a>
+                <a href="javascript:;">外袋</a>
+                <a href="javascript:;">色牌</a>
+            </div>
+        </div>
+        <!-- 面板切换 END -->
+
+        <!-- 输入区 START -->
+        <div class="container" id="biaoqian">
+            
+            <!-- 包装面板 （1） START -->
+            <div class="panel-container show">
+                <div id="biaoqian-1" print-info="{page:'min-tags', size:'page-a4', row:'row-4', letter:'A4 小标签'}">
+                    <ul class="lsit-team">
+                        <li>
+                            <div class="wrap">
+                                <p><label>第一行：</label><input type="text" name="one"></p>
+                                <p><label>第二行：</label><input type="text" name="tow"></p>
+                                <p><label>第三行：</label><input type="text" name="three"></p>
+                                <p><label>日期批号：</label><input type="text" name="time"></p>
+                                <p><label>标签数：</label><input type="text" name="num"></p>
+                            </div>
+                            <button class="remove-button" tabIndex="-1">X</button>
+                        </li>
+                        <li>
+                            <div class="wrap">
+                                <p><label>第一行：</label><input type="text" name="one"></p>
+                                <p><label>第二行：</label><input type="text" name="tow"></p>
+                                <p><label>第三行：</label><input type="text" name="three"></p>
+                                <p><label>日期批号：</label><input type="text" name="time"></p>
+                                <p><label>标签数：</label><input type="text" name="num"></p>
+                            </div>
+                            <button class="remove-button" tabIndex="-1">X</button>
+                        </li>
+                        <li>
+                            <div class="wrap">
+                                <p><label>第一行：</label><input type="text" name="one"></p>
+                                <p><label>第二行：</label><input type="text" name="tow"></p>
+                                <p><label>第三行：</label><input type="text" name="three"></p>
+                                <p><label>日期批号：</label><input type="text" name="time"></p>
+                                <p><label>标签数：</label><input type="text" name="num"></p>
+                            </div>
+                            <button class="remove-button" tabIndex="-1">X</button>
+                        </li>
+                        <li>
+                            <div class="wrap">
+                                <p><label>第一行：</label><input type="text" name="one"></p>
+                                <p><label>第二行：</label><input type="text" name="tow"></p>
+                                <p><label>第三行：</label><input type="text" name="three"></p>
+                                <p><label>日期批号：</label><input type="text" name="time"></p>
+                                <p><label>标签数：</label><input type="text" name="num"></p>
+                            </div>
+                            <button class="remove-button" tabIndex="-1">X</button>
+                        </li>
+                        <li>
+                            <div class="add-team">
+                                <input class="add-button" type="button" value="+">
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="panel-footer">
+                        <button class="reset-button" tabIndex="-1">重置面板</button>
+                        <button class="preview-button green right" tabIndex="-1">生成预览</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 包装面板 （1） END -->
+            
+            <!-- 追踪面板 （2） START -->
+            <div class="panel-container">
+                <div id="biaoqian-2"  print-info="{page:'max-tags', size:'page-a4', row:'logo-3', letter:'A4 大标签'}">
+                    <ul class="lsit-team">
+                        <li>
+                            <div class="wrap">
+                                <p><label>编号颜色：</label><input type="text" name="one" label="编号颜色："></p>
+                                <p><label>供应商：</label><input type="text" name="tow" label="供应厂商："></p>
+                                <p><label>厂商批号：</label><input type="text" name="three" label="供应厂商："></p>
+                                <p><label>原料批号：</label><input type="text" name="time" label="原料批号："></p>
+                                <p><label>标签数：</label><input type="text" name="num"></p>
+                            </div>
+                            <button class="remove-button" tabIndex="-1">X</button>
+                        </li>
+                        <li>
+                            <div class="wrap">
+                                <p><label>编号颜色：</label><input type="text" name="one" label="编号颜色："></p>
+                                <p><label>供应商：</label><input type="text" name="tow" label="供应厂商："></p>
+                                <p><label>厂商批号：</label><input type="text" name="three" label="供应厂商："></p>
+                                <p><label>原料批号：</label><input type="text" name="time" label="原料批号："></p>
+                                <p><label>标签数：</label><input type="text" name="num"></p>
+                            </div>
+                            <button class="remove-button" tabIndex="-1">X</button>
+                        </li>
+                        <li>
+                            <div class="wrap">
+                                <p><label>编号颜色：</label><input type="text" name="one" label="编号颜色："></p>
+                                <p><label>供应商：</label><input type="text" name="tow" label="供应厂商："></p>
+                                <p><label>厂商批号：</label><input type="text" name="three" label="供应厂商："></p>
+                                <p><label>原料批号：</label><input type="text" name="time" label="原料批号："></p>
+                                <p><label>标签数：</label><input type="text" name="num"></p>
+                            </div>
+                            <button class="remove-button" tabIndex="-1">X</button>
+                        </li>
+                        <li>
+                            <div class="wrap">
+                                <p><label>编号颜色：</label><input type="text" name="one" label="编号颜色："></p>
+                                <p><label>供应商：</label><input type="text" name="tow" label="供应厂商："></p>
+                                <p><label>厂商批号：</label><input type="text" name="three" label="供应厂商："></p>
+                                <p><label>原料批号：</label><input type="text" name="time" label="原料批号："></p>
+                                <p><label>标签数：</label><input type="text" name="num"></p>
+                            </div>
+                            <button class="remove-button" tabIndex="-1">X</button>
+                        </li>
+                        <li>
+                            <div class="add-team">
+                                <input class="add-button" type="button" value="+">
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="panel-footer">
+                        <button class="reset-button" tabIndex="-1">重置面板</button>
+                        <button class="preview-button green right" tabIndex="-1">生成预览</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 追踪面板 （2） END -->
+            
+            <!-- 外袋面板 （3） START -->
+            <div class="panel-container">
+                <div id="biaoqian-3" print-info="{page:'max-tags', size:'page-a4', row:'row-4', letter:'A4 大标签'}">
+                    <ul class="lsit-team">
+                        <li>
+                            <div class="wrap">
+                                <p><label>客户地点：</label><input type="text" name="one" label="用料地点："></p>
+                                <p><label>色粉编号：</label><input type="text" name="tow" label="色粉编号："></p>
+                                <p><label>包装份数：</label><input type="text" name="three" label="包装份数："></p>
+                                <p><label>批号日期：</label><input type="text" name="time" label="批号日期："></p>
+                                <p><label>标签数：</label><input type="text" name="num"></p>
+                            </div>
+                            <button class="remove-button" tabIndex="-1">X</button>
+                        </li>
+                        <li>
+                            <div class="wrap">
+                                <p><label>客户地点：</label><input type="text" name="one" label="用料地点："></p>
+                                <p><label>色粉编号：</label><input type="text" name="tow" label="色粉编号："></p>
+                                <p><label>包装份数：</label><input type="text" name="three" label="包装份数："></p>
+                                <p><label>批号日期：</label><input type="text" name="time" label="批号日期："></p>
+                                <p><label>标签数：</label><input type="text" name="num"></p>
+                            </div>
+                            <button class="remove-button" tabIndex="-1">X</button>
+                        </li>
+                        <li>
+                            <div class="wrap">
+                                <p><label>客户地点：</label><input type="text" name="one" label="用料地点："></p>
+                                <p><label>色粉编号：</label><input type="text" name="tow" label="色粉编号："></p>
+                                <p><label>包装份数：</label><input type="text" name="three" label="包装份数："></p>
+                                <p><label>批号日期：</label><input type="text" name="time" label="批号日期："></p>
+                                <p><label>标签数：</label><input type="text" name="num"></p>
+                            </div>
+                            <button class="remove-button" tabIndex="-1">X</button>
+                        </li>
+                        <li>
+                            <div class="wrap">
+                                <p><label>客户地点：</label><input type="text" name="one" label="用料地点："></p>
+                                <p><label>色粉编号：</label><input type="text" name="tow" label="色粉编号："></p>
+                                <p><label>包装份数：</label><input type="text" name="three" label="包装份数："></p>
+                                <p><label>批号日期：</label><input type="text" name="time" label="批号日期："></p>
+                                <p><label>标签数：</label><input type="text" name="num"></p>
+                            </div>
+                            <button class="remove-button" tabIndex="-1">X</button>
+                        </li>
+                        <li>
+                            <div class="add-team">
+                                <input class="add-button" type="button" value="+">
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="panel-footer">
+                        <button class="reset-button" tabIndex="-1">重置面板</button>
+                        <button class="preview-button green right" tabIndex="-1">生成预览</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 外袋面板 （3） END -->
+            
+            <!-- 色牌面板 （4） START -->
+            <div class="panel-container">
+                <div id="biaoqian-4" print-info="{page:'min-tags', size:'page-a4', row:'row-5', letter:'A4 小标签'}">
+                    <ul class="lsit-team">
+                        <li>
+                            <div class="wrap">
+                                <p><label>第一行：</label><input type="text" name="one"></p>
+                                <p><label>第二行：</label><input type="text" name="tow"></p>
+                                <p><label>第三行：</label><input type="text" name="three"></p>
+                                <p><label>第四行：</label><input type="text" name="four"></p>
+                                <p><label>第五行：</label><input type="text" name="time"></p>
+                                <p><label>标签数：</label><input type="text" name="num"></p>
+                            </div>
+                            <button class="remove-button" tabIndex="-1">X</button>
+                        </li>
+                        <li>
+                            <div class="wrap">
+                                <p><label>第一行：</label><input type="text" name="one"></p>
+                                <p><label>第二行：</label><input type="text" name="tow"></p>
+                                <p><label>第三行：</label><input type="text" name="three"></p>
+                                <p><label>第四行：</label><input type="text" name="four"></p>
+                                <p><label>第五行：</label><input type="text" name="time"></p>
+                                <p><label>标签数：</label><input type="text" name="num"></p>
+                            </div>
+                            <button class="remove-button" tabIndex="-1">X</button>
+                        </li>
+                        <li>
+                            <div class="wrap">
+                                <p><label>第一行：</label><input type="text" name="one"></p>
+                                <p><label>第二行：</label><input type="text" name="tow"></p>
+                                <p><label>第三行：</label><input type="text" name="three"></p>
+                                <p><label>第四行：</label><input type="text" name="four"></p>
+                                <p><label>第五行：</label><input type="text" name="time"></p>
+                                <p><label>标签数：</label><input type="text" name="num"></p>
+                            </div>
+                            <button class="remove-button" tabIndex="-1">X</button>
+                        </li>
+                        <li>
+                            <div class="wrap">
+                                <p><label>第一行：</label><input type="text" name="one"></p>
+                                <p><label>第二行：</label><input type="text" name="tow"></p>
+                                <p><label>第三行：</label><input type="text" name="three"></p>
+                                <p><label>第四行：</label><input type="text" name="four"></p>
+                                <p><label>第五行：</label><input type="text" name="time"></p>
+                                <p><label>标签数：</label><input type="text" name="num"></p>
+                            </div>
+                            <button class="remove-button" tabIndex="-1">X</button>
+                        </li>
+                        <li>
+                            <div class="add-team">
+                                <input class="add-button" type="button" value="+">
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="panel-footer">
+                        <button class="reset-button" tabIndex="-1">重置面板</button>
+                        <button class="preview-button green right" tabIndex="-1">生成预览</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 色牌面板 （4） END -->
+        </div>
+        <!-- 输入区 END -->
+
+    </div>
+    <!-- 主面板 END -->
+
+
+    <!-- 打印详情 START -->
+    <div id="print-control" class="print-control hide">
+        <!-- 预览 START -->
+        <div id="print-view" class="print-wrap">
+        </div>
+        <!-- 预览 END -->
+
+        <!-- 信息面板 START -->
+        <div class="print-panel">
+            <div class="panel-box row">
+                <h2 class="info-title">打印信息</h2>
+                <div class="info-panel">
+                    <p><b>页数：</b><span>5 页</span></p>
+                    <p><b>纸张：</b><span>A4</span></p>
+                </div>
+            </div>
+            <div class="button-wrap">
+                <button id="enter-print" class="print-button green" tabIndex="-1">打印</button>
+                <button id="close-print" class="print-button" tabIndex="-1">取消</button>
+            </div>
+        </div>
+        <!-- 信息面板 END -->
+    </div>
+    <!-- 打印详情 END -->
+
+    <!-- 打印区域 START -->
+    <div id="print-wrap" class="print-wrap">
+    </div>
+    <!-- 打印区域 END -->
+</body>
+</html>

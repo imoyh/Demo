@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>色粉管理 - Combine Will</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/print.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/websqldb.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+    <!-- 主面板 START -->
+    <div id="wrapper">
+
+        <!-- 面板切换 START -->
+        <div class="wrap-header">
+            <div class="entry-changing">
+                <a href="javascript:;" class="active">查询</a>
+                <a href="javascript:;">管理</a>
+            </div>
+        </div>
+        <!-- 面板切换 END -->
+
+        <!-- 输入区 START -->
+        <div class="container" id="peifanadmin">
+            
+            <!-- 包装面板 （1） START -->
+            <div class="panel-container show">
+                <div id="peifanadmin-1"> 
+                    <div class="panel-wrap">
+                        <div class="search-panel">
+                            <div class="wrap">
+                                <input class="search-text" type="text" name="" value="">
+                                <input class="search-submit" type="button" value="搜索">
+                            </div>
+                        </div>
+                        <div class="data-panel">
+                            <div class="wrap">
+                                <div class="data-head">
+                                    <span>编号颜色</span>
+                                    <span>详情备注</span>
+                                    <span>配方信息</span>
+                                </div>
+                                <div class="table-box">
+                                    <table class="data-table" border="0" cellspacing="0" cellpadding="0">
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="reset-button" tabIndex="-1">重置面板</button>
+                    </div>  
+                </div>
+            </div>
+            <!-- 包装面板 （1） END -->
+            
+            <!-- 包装面板 （2） START -->
+            <div class="panel-container">
+                <div id="peifanadmin-2">
+                    <div class="panel-wrap">
+                        <div class="import-panel row-6">
+                            <div class="wrap">
+                                <div class="import-list">
+                                    <div class="base-head">
+                                        <p><label>编号：</label><input type="text" class="color-name" placeholder="必填"></p>
+                                        <p><label>颜色：</label><input type="text" class="color-text" placeholder="必填"></p>
+                                        <p><label>详情：</label><input type="text" class="color-info" placeholder="必填"></p>
+                                        <p><label>备注：</label><input type="text" class="color-remark" placeholder="可留空"></p>
+                                    </div>
+                                    <div class="base-color">
+                                        <p><span>基色</span><span>重量</span></p>
+                                        <p><input type="text" class="color"> <input type="text" class="number"></p>
+                                        <p><input type="text" class="color"> <input type="text" class="number"></p>
+                                        <p><input type="text" class="color"> <input type="text" class="number"></p>
+                                        <p><input type="text" class="color"> <input type="text" class="number"></p>
+                                        <p><input type="text" class="color"> <input type="text" class="number"></p>
+                                        <p><input type="text" class="color"> <input type="text" class="number"></p>
+                                        <p><input type="text" class="color"> <input type="text" class="number"></p>
+                                        <p><input type="text" class="color"> <input type="text" class="number"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search-panel row-4">
+                            <div class="wrap">
+                                <div class="search-input">
+                                    <input class="search-text" type="text" placeholder="输入色粉编号搜索">
+                                    <input class="search-button green" type="button" value="搜索">
+                                </div>
+                                <div class="search-content">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="reset-button" tabIndex="-1">重置面板</button>
+                        <button class="save-button green right" tabIndex="-1">保存配方</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 包装面板 （2） END -->
+            
+        </div>
+        <!-- 输入区 END -->
+
+    </div>
+    <!-- 主面板 END -->
+
+
+    <!-- 打印详情 START -->
+    <div id="print-control" class="print-control hide">
+        <!-- 预览 START -->
+        <div id="print-view" class="print-wrap min-tags row-4">
+        </div>
+        <!-- 预览 END -->
+
+        <!-- 信息面板 START -->
+        <div class="print-panel">
+            <div class="panel-box row">
+                <h2 class="info-title">打印信息</h2>
+                <div class="info-panel">
+                    <p><b>打印页数：</b><span>5 页</span></p>
+                    <p><b>纸张大小：</b><span>A4</span></p>
+                </div>
+            </div>
+            <div class="button-wrap">
+                <button id="enter-print" class="print-button green" tabIndex="-1">打印</button>
+                <button id="close-print" class="print-button" tabIndex="-1">取消</button>
+            </div>
+        </div>
+        <!-- 信息面板 END -->
+    </div>
+    <!-- 打印详情 END -->
+
+    <!-- 打印区域 START -->
+    <div id="print-wrap" class="print-wrap min-tags row-4">
+    </div>
+    <!-- 打印区域 END -->
+</body>
+</html>
