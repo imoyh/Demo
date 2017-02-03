@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="这是一个匿名聊天室，你可以在此畅所欲言">
+	<title>匿名聊天室</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://cdn.wilddog.com/sdk/js/2.1.2/wilddog.js"></script>
+	<script charset="utf-8" type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="guide" id="guide-panel">
+			<h2 class="title">【 选择头像 】</h2>
+			<div class="portrait-list clearfloat">
+				<a class="po-1"></a>
+				<a class="po-2"></a>
+				<a class="po-3"></a>
+				<a class="po-4"></a>
+				<a class="po-5"></a>
+				<a class="po-6"></a>
+				<a class="po-7"></a>
+				<a class="po-8"></a>
+			</div>
+			<div class="guide-foot">
+				<button class="close-guide">确认完成</button>
+			</div>
+			<p>@浩子丶Howes</p>
+		</div>
+		<div class="option" id="option-panel">
+			<p>暂未开放</p>
+		</div>
+		<div class="chatroom" id="chatroom-panel">
+			<p>暂未开放</p>
+		</div>
+		<div class="container">
+			<div class="header">
+				<span><a class="button" id="show-option"><i></i></a></span>
+				<span><a class="change" id="show-chatroom">XXX聊天室</a></span>
+				<span><a class="portrait po-8" id="head-portrait"></a></span>
+			</div>
+			<div class="content" id="content-box">
+				<!--<div class="message">
+					<a class="portrait" href=""></a>
+					<p>这是一条消息这是一条消息这是一条消息这是一条消息这是一条消息</p>
+				</div>-->
+			</div>
+			<div class="import">
+				<span><textarea class="text" id="content-text"></textarea></span>
+				<span class="panel"><button class="button" id="submit-content">发送</button></span>
+			</div>
+		</div>
+	</div>
+	<div id="uuid"></div>
+</body>
+</html>

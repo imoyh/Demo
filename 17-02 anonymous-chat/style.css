@@ -1,0 +1,350 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	color: inherit;
+	font: inherit;
+	box-sizing: border-box;
+	vertical-align: baseline;
+}
+
+body,
+html {
+	width: 100%;
+	height: 100%;
+}
+
+a,
+button {
+	cursor: pointer;
+}
+
+.clearfloat:after {
+	content: "";
+	display: block;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+
+
+.wrapper {
+	width: 800px;
+	height: 600px;
+	margin: 0 auto;
+	border: 1px solid #ddd;
+	overflow: hidden;
+	position: relative;
+	color: #888;
+}
+
+@media screen and (max-width: 640px) {
+    .wrapper {
+		width: 100%;
+		height: 100%;
+	}
+
+	.container .content .message p {
+		max-width: 80%;
+	}
+	/*.container .content {
+		overflow-x: hidden;
+		height: 100%;
+	}*/
+}
+
+
+.guide {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: #FFF;
+	z-index: 10;
+	text-align: center;
+	display: none;
+
+}
+
+.guide .title {
+	margin: 100px 0 40px 0;
+	font-size: 24px;
+}
+
+.guide .portrait-list {
+	width: 320px;
+	margin: 0 auto;
+}
+
+.guide .portrait-list a{
+	float: left;
+	width: 40px;
+	height: 40px;
+	border: 1px solid #ddd;
+	background-image: url(img/portrait.jpg);
+	background-repeat: no-repeat;
+	background-size: 114px 114px;
+	margin: 20px;
+	transform: scale(1.5);
+}
+
+
+.guide .guide-foot {
+	width: 100%;
+	margin: 40px 0;
+}
+
+.guide .guide-foot .close-guide{
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+}
+
+.option {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: -150%;
+	box-shadow: 0 0 20px #EEEEEE;
+	transition: 0.5s;
+	background: #FFF;
+	z-index: 5;
+	font: 50px/600px bold;
+	text-align: center;
+}
+
+.chatroom {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: -150%;
+	box-shadow: 0 0 20px #EEEEEE;
+	transition: 0.5s;
+	background: #FFF;
+	z-index: 5;
+	font: 50px/600px bold;
+	text-align: center;
+}
+
+
+.container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.container .portrait {
+	background-image: url(img/portrait.jpg);
+	background-repeat: no-repeat;
+	background-size: 114px 114px;
+}
+
+.guide .portrait-list .po-1,
+.container .portrait.po-1 {
+	background-position: 0px -38px;
+}
+
+.guide .portrait-list .po-2,
+.container .portrait.po-2 {
+	background-position: 0px -76px;
+}
+
+.guide .portrait-list .po-3,
+.container .portrait.po-3 {
+	background-position: -76px -0px;
+}
+
+
+.guide .portrait-list .po-4,
+.container .portrait.po-4 {
+	background-position: -76px -76px;
+}
+
+.guide .portrait-list .po-5,
+.container .portrait.po-5 {
+	background-position: -38px -0px;
+}
+
+.guide .portrait-list .po-6,
+.container .portrait.po-6 {
+	background-position: -38px -38px;
+}
+
+.guide .portrait-list .po-7,
+.container .portrait.po-7 {
+	background-position: -38px -76px;
+}
+
+.guide .portrait-list .po-8,
+.container .portrait.po-8 {
+	background-position: -76px -38px;
+}
+
+
+
+
+
+
+
+
+.container .header {
+	width: 100%;
+	height: 50px;
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: #FFF;
+	z-index: 9;
+}
+
+.container .header span {
+	float: left;
+	width: 33.3333333333%;
+	height: 49px;
+}
+
+.container .header .button {
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin: 5px 10px;
+}
+
+.container .header .button i{
+	float: left;
+	height: 2px;
+	width: 35px;
+	margin: 19px 0;
+	background: #ddd;
+	position: relative;
+	transition: 0.5s;
+}
+
+.container .header .button i:after,
+.container .header .button i:before {
+	content: '';
+	display: block;
+	width: 35px;
+	height: 2px;
+	background: #ddd;
+	position: absolute;
+	transition: 0.5s;
+}
+
+.container .header .button i:before {
+	top: -10px;
+}
+
+.container .header .button i:after {
+	top: 10px;
+}
+
+.container .header .button i.active {
+	background: transparent;
+}
+
+.container .header .button i.active:before {
+	transform: rotate(45deg);
+	top: 50%;
+	margin-top: -1px;
+}
+
+.container .header .button i.active:after {
+	transform: rotate(-45deg);
+	top: 50%;
+	margin-top: -1px;
+} 
+
+
+
+
+
+
+.container .header .change {
+	display: inline-block;
+	height: 30px;
+	margin: 10px;
+}
+
+.container .header .portrait {
+	float: right;
+	height: 40px;
+	width: 40px;
+	margin: 5px 20px;
+	border-radius: 50%;
+	border: 1px solid #ddd;
+}
+
+.container .content {
+	width: 100%;
+	height: 100%;
+	border-top: 50px solid transparent; 
+	border-bottom: 60px solid transparent; 
+	overflow-x: hidden;
+}
+
+.container .content .message {
+	margin: 10px;
+}
+
+.container .content .message .portrait {
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin: 0 10px;
+	border: 1px solid #ddd;
+	border-radius: 50%;
+}
+
+.container .content .message.sent .portrait {
+	float: right;
+}
+
+.container .content .message p {
+	display: inline-block;
+	text-align: left;
+	padding: 15px;
+	max-width: 45%;
+	min-height: 50px;
+	border: 1px solid #ddd;
+}
+
+.container .content .message.sent {
+	text-align: right;
+}
+
+
+
+
+.container .import {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	border-top: 1px solid #ddd;
+	width: 100%;
+	padding: 10px;
+	background: #FFF;
+}
+
+.container .import .text {
+	float: left;
+	max-width: 85%;
+	min-width: 85%;
+	max-height: 40px;
+	min-height: 40px;
+	border: 1px solid #ddd;
+	padding: 10px 10px;
+}
+
+.container .import .panel {
+	float: left;
+	width: 15%;
+}
+
+.container .import .button {
+	float: left;
+	width: 100%;
+	height: 40px;
+}
